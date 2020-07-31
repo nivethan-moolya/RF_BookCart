@@ -5,15 +5,14 @@ Resource  ../Operational/instructions.robot
 Resource  ../Operational/locatorVariables.robot
 
 *** Keywords ***
-Open India Bookstore
+User is allowed to Open India Bookstore
     Open Browser  ${url_books}  ${brows}   
-    Maximize Browser Window
+    Maximize Browser Windows
     sleep  4s
     Verify WebPage title  ${Expected_homePage}
     Execute Javascript  window.scrollTo(0, 500)
-    Log to Console  Step1
 
-Navigate to Category "Computing and Internet"
+User Navigate to Category "Computing and Internet"
     ${category_count} =  Get Element Count  xpath=//*[@id="leftNavContainer"]/ul/li
     #Log to Console  ${category_count}
     sleep  3s
@@ -24,10 +23,9 @@ Navigate to Category "Computing and Internet"
         Exit For Loop If  "${dynamic_categ_name}" == "${Expected_category}"
     END
     Set Test Variable  ${static_categ_name}  xpath=//*[@id="leftNavContainer"]/ul/li[${i}]/a
-    Log to Console  Step2
     
 
-Click on "Digital Media and Internet" Sub Section
+User Clicks on "Digital Media and Internet" Sub Section
     Mouse Over  ${static_categ_name}
     sleep  1s
     Mouse Over  ${Digital_Media}
@@ -36,10 +34,9 @@ Click on "Digital Media and Internet" Sub Section
     Click Element  ${Digital_Media}
     sleep  1s
     Verify WebPage title  ${Expected_Book_Category}
-    Log to Console  Step3
 
 
-Search for the book title 'Art of Community' in the Booklist
+User adds the book 'Art of Community' to the Bookkart
     ${buk_list} =  Get Element Count  xpath=//div[@class='col-md-9']/div
     #Log to Console  ${buk_list}
     FOR  ${j}  IN RANGE  2  ${buk_list}
@@ -48,21 +45,15 @@ Search for the book title 'Art of Community' in the Booklist
     Exit For Loop If  "${buk_names}" == "${Expected_Book_Name}"
     END
     Set Test Variable  ${exact_buk_elem}  xpath=//div[@class='col-md-9']/div[${j}]/a/div[3]
-    Log to Console  Step4
 
-Go to Expected Book details page
+User navigatess to the Expected Book details page
     sleep  5s
     Click Element  ${exact_buk_elem}
-    Log to Console  Step5
-    
 
-
-Verify User navigated to the expected book details
+Verify User able to see the expected book details
     Verify WebPage title  ${Expected_Book_Detailed_Name}
-    Log to Console  Step6
 
 Verify WebPage title
     [Arguments]  ${title_name}
     Wait Until Page Contains  ${title_name}
     Log to Console  ${title_name}
-    Log to Console  Pass!!
