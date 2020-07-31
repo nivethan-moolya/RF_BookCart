@@ -1,34 +1,33 @@
 *** Settings ***
 Library  SeleniumLibrary
 
+
+
 *** Test Cases ***
 User should be able to land on Study Overview page
-    Login to med
-    Verify main page
-    #Go to cds
-    Verify home page
-    #Click on any Study
-    #verify details page
+    Launch Medidata Application
+    Enter Valid Credentials Login
+    Verify iMedidata home page
+
 
 
 *** Keywords ***
-Login to med
-    Open Browser  https://login-sandbox.imedidata.net/login?  gc
+Launch Medidata Application
+    Open Browser  ${url}  ${browser}
     Maximize Browser Window
-    Input Text  id=session_username  Nivethan
-    sleep  3s
-    Input Text  xpath=//*[@id="session_password"]  White@123
-    sleep  3s
-    Click Button  id=create_session_link
-    sleep  5s
 
-Verify main page
-    Verify page content  Study Site Analytics
-    ${howmany} =  Get Element Count  xpath=//*[@class='sidebar-container']/div/div
-    Log to console  ${howmany}
+Enter Valid Credentials Login
+    Input Text  ${username_po}  StMg_Automation
+    Input Text  ${password_po}  Automation_2020
+    Click Button  ${login_po}
 
-Verify page content
-    [Arguments]  ${expect_page}
-    Wait Until Page Contains  ${expect_page}
-    Log to console  ${expect_page}
-    Log to console  Pass!
+Verify iMedidata home page
+    Wait Until Page Contains  Study Site Analytics
+
+
+*** Variables ***
+${url} =  https://login-sandbox.imedidata.net/login?
+${browser} =  gc
+${username_po} =  id=session_username
+${password_po} =  xpath=//*[@id="session_password"]
+${login_po} =  id=create_session_link
