@@ -1,7 +1,7 @@
 *** Variables ***
 
 ${url_books} =  https://www.indiabookstore.net/ 
-${brows} =  gc
+${BROWSER} =  gc
 ${Expected_homePage} =  Buy books online in India from online bookstores
 ${Expected_category} =  Computing & Internet
 ${Expected_Book_Name} =  RESTful Web Services Cookbook:...
