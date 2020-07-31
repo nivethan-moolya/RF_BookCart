@@ -1,8 +1,10 @@
 *** Settings ***
-Library  SeleniumLibrary
 Resource  ../Operational/instructions.robot
 Resource  ../Operational/locatorVariables.robot
 
+#Initializing Tests
+Suite Setup  Launch Browser
+Suite Teardown  Close web Browser
 
 #robot -d results -i sanity TestsBook
 #robot -d results -v BROWSER:$BROWSER -i sanity TestsBook

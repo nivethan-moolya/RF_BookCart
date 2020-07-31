@@ -1,14 +1,17 @@
 *** Settings ***
+Library  SeleniumLibrary
 Library  Collections
 Resource  ../Operational/instructions.robot
 Resource  ../Operational/locatorVariables.robot
 
 *** Keywords ***
+
+Launch Browser
+    Open Browser  about:blank  ${BROWSER}
+    Maximize Browser Window
+    
 User is allowed to Open India Bookstore
-    Open Browser  ${url_books}  ${BROWSER}   
-    sleep  4s
-    Maximize Browser Windows
-    sleep  4s
+    Go To  ${url_books}
     Verify WebPage title  ${Expected_homePage}
     Execute Javascript  window.scrollTo(0, 500)
 
@@ -57,3 +60,6 @@ Verify WebPage title
     [Arguments]  ${title_name}
     Wait Until Page Contains  ${title_name}
     Log to Console  ${title_name}
+
+Close web Browser
+    Close Browser
