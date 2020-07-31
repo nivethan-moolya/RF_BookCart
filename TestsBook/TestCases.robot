@@ -3,7 +3,8 @@ Resource  ../Operational/instructions.robot
 Resource  ../Operational/locatorVariables.robot
 
 
-#robot -d results -i sanity Tests
+#robot -d results -i sanity TestsBook
+robot -d results -v BROWSER:$BROWSER -i sanity TestsBook
 
 
 *** Test Cases ***

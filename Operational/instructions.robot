@@ -5,8 +5,9 @@ Resource  ../Operational/instructions.robot
 Resource  ../Operational/locatorVariables.robot
 
 *** Keywords ***
-User is allowed to Open India Bookstore
+    User is allowed to Open India Bookstore
     Open Browser  ${url_books}  ${brows}   
+    sleep  4s
     Maximize Browser Windows
     sleep  4s
     Verify WebPage title  ${Expected_homePage}
