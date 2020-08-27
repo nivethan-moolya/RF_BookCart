@@ -11,7 +11,6 @@ Launch Browser
     Maximize Browser Window
     
 User is allowed to Open India Bookstore
-    Log  Test123
     Log to Console  Open webpage
     Go To  ${url_books}
     Verify WebPage title  ${Expected_homePage}
