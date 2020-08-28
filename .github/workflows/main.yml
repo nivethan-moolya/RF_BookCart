@@ -14,15 +14,15 @@ jobs:
           uses: joonvena/robotframework-docker-action@v0.1
           env:
             BROWSER: chrome 
-            ROBOT_TESTS_DIR: ${{ github.repository }}/robot_tests
-            #ROBOT_REPORTS_DIR: ${{ github.repository }}/reports
+            ROBOT_TESTS_DIR: ${{ github.workspace }}/robot_tests
+            #ROBOT_REPORTS_DIR: ${{ github.workspace }}/reports
             #run: robot -d reports -i sanity robot_tests
         - name: Upload test results
           uses: actions/upload-artifact@v1  
           if: always()
           with:
             name: reports
-            path: ${{ github.repository }}/reports
+            path: ${{ github.workspace }}/reports
     
     generate_report:
         if: always()
@@ -46,5 +46,5 @@ jobs:
             REPO_OWNER: ${{ env.REPOSITORY_OWNER }}
             COMMIT_SHA: ${{ github.sha }}
             REPOSITORY: ${{ env.REPOSITORY_NAME }}
-            REPORT_PATH: ${{ github.repository }}/reports
+            REPORT_PATH: ${{ github.workspace }}/reports
             #REPORT_PATH: reports
