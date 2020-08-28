@@ -24,7 +24,7 @@ jobs:
           if: always()
           with:
             name: reports
-            path: ${{ github.workspace }}/reports
+            path: ${{ github.workspace }}
     
     generate_report:
         if: always()
