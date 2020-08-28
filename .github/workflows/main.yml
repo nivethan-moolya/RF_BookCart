@@ -22,7 +22,7 @@ jobs:
           if: always()
           with:
             name: reports
-            path: /opt/robotframework/reports
+            path: reports
     
     generate_report:
         if: always()
