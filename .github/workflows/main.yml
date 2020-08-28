@@ -15,15 +15,16 @@ jobs:
           env:
             BROWSER: chrome 
             ROBOT_TESTS_DIR: ${{ github.workspace }}/robot_tests
-            #ROBOT_REPORTS_DIR: ${{ github.workspace }}/reports
+            run: robot -d reports -i sanity robot_tests
+            ROBOT_REPORTS_DIR: ${{ github.workspace }}/reports
             #run: robot -d reports -i sanity robot_tests
-            ROBOT_REPORTS_DIR: ${{ github.workspace }}
+        
         - name: Upload test results
           uses: actions/upload-artifact@v1  
           if: always()
           with:
             name: reports
-            path: ${{ github.workspace }}
+            path: ${{ github.workspace }}/reports
     
     generate_report:
         if: always()
@@ -47,5 +48,5 @@ jobs:
             REPO_OWNER: ${{ env.REPOSITORY_OWNER }}
             COMMIT_SHA: ${{ github.sha }}
             REPOSITORY: ${{ env.REPOSITORY_NAME }}
-            REPORT_PATH: ${{ github.workspace }}
+            REPORT_PATH: reports
             #REPORT_PATH: reports
