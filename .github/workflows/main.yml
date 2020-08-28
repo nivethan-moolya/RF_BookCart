@@ -48,5 +48,5 @@ jobs:
             REPO_OWNER: ${{ env.REPOSITORY_OWNER }}
             COMMIT_SHA: ${{ github.sha }}
             REPOSITORY: ${{ env.REPOSITORY_NAME }}
-            REPORT_PATH: ${{ github.workspace }}
+            REPORT_PATH: ${{ github.workspace }}/reports
             #REPORT_PATH: reports
