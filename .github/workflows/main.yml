@@ -15,14 +15,14 @@ jobs:
           env:
             BROWSER: chrome 
             ROBOT_TESTS_DIR: robot_tests
-            #ROBOT_REPORTS_DIR: reports
+            ROBOT_REPORTS_DIR: /opt/robotframework/reports
             run: robot -d reports -i sanity robot_tests
         - name: Upload test results
           uses: actions/upload-artifact@v1  
           if: always()
           with:
             name: reports
-            path: reports
+            path: /opt/robotframework/reports
     
     generate_report:
         if: always()
@@ -46,5 +46,5 @@ jobs:
             REPO_OWNER: ${{ env.REPOSITORY_OWNER }}
             COMMIT_SHA: ${{ github.sha }}
             REPOSITORY: ${{ env.REPOSITORY_NAME }}
-            REPORT_PATH: reports
+            REPORT_PATH: /opt/robotframework/reports  
             #REPORT_PATH: reports
