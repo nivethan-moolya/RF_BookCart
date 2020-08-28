@@ -48,5 +48,5 @@ jobs:
             REPO_OWNER: ${{ env.REPOSITORY_OWNER }}
             COMMIT_SHA: ${{ github.sha }}
             REPOSITORY: ${{ env.REPOSITORY_NAME }}
-            REPORT_PATH: ${{ github.repository }}/reports
+            REPORT_PATH: /home/runner/work/RF_BookCart/RF_BookCart/reports
             #REPORT_PATH: reports
