@@ -15,7 +15,7 @@ jobs:
           env:
             BROWSER: chrome 
             ROBOT_TESTS_DIR: robot_tests
-            ROBOT_REPORTS_DIR: reports
+            #ROBOT_REPORTS_DIR: reports
             run: robot -d reports -i sanity robot_tests
         - name: Upload test results
           uses: actions/upload-artifact@v1  
