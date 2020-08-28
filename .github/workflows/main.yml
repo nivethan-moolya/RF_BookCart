@@ -16,7 +16,7 @@ jobs:
             BROWSER: chrome 
             ROBOT_TESTS_DIR: ${{ github.workspace }}/robot_tests
             run: robot -d reports -i sanity robot_tests
-            #ROBOT_REPORTS_DIR: ${{ github.workspace }}/reports
+            ROBOT_REPORTS_DIR: ${{ github.workspace }}
             #run: robot -d reports -i sanity robot_tests
         
         - name: Upload test results
