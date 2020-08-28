@@ -15,14 +15,14 @@ jobs:
           env:
             BROWSER: chrome 
             ROBOT_TESTS_DIR: robot_tests
-            ROBOT_REPORTS_DIR: eports
+            ROBOT_REPORTS_DIR: reports
             run: robot -d reports -i sanity robot_tests
         - name: Upload test results
           uses: actions/upload-artifact@v1  
           if: always()
           with:
             name: reports
-            path: ${{ github.workspace }}/reports
+            path: reports
     
     generate_report:
         if: always()
