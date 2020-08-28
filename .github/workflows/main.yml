@@ -13,9 +13,8 @@ jobs:
         - name: Execute tests  
           uses: joonvena/robotframework-docker-action@v0.1
           env:
-            BROWSER: chrome 
-            #ROBOT_TESTS_DIR: ${{ github.workspace }}/robot_tests
-            run: robot -d reports -i sanity robot_tests
+            BROWSER: chrome
+            ROBOT_TESTS_DIR: ${{ github.workspace }}/robot_tests
             ROBOT_REPORTS_DIR: ${{ github.workspace }}/reports 
             #run: robot -d reports -i sanity robot_tests
         
