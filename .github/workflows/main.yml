@@ -22,7 +22,7 @@ jobs:
           if: always()
           with:
             name: reports
-            path: ${{ github.workspace }}/reports
+            path: opt/robotframework/reports
     
     generate_report:
         if: always()
