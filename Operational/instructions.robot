@@ -7,7 +7,8 @@ Resource  ../Operational/locatorVariables.robot
 *** Keywords ***
 
 Launch Browser
-    Open Browser  about:blank  ${BROWSER}
+    #Open Browser  about:blank  ${BROWSER}
+    Create Webdriver     Chrome     executable_path=/usr/local/bin/chromedriver
     Maximize Browser Window
     
 User is allowed to Open India Bookstore
