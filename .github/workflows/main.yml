@@ -24,4 +24,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        bash: ${{ github.workspace }}/run.sh
+        run: bash ${{ github.workspace }}/run.sh
