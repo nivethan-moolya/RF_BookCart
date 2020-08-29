@@ -7,20 +7,17 @@ on:
 jobs:
     test:
         runs-on: ubuntu-latest
-        name: Run Robot Framework Tests 
-        steps:    
+        steps:
         - uses: actions/checkout@v2
-        - name: Execute tests  
+        - name: Execute tests
           uses: joonvena/robotframework-docker-action@v0.1
           env:
             BROWSER: chrome
             ROBOT_TESTS_DIR: ${{ github.workspace }}/robot_tests
-            ROBOT_REPORTS_DIR: ${{ github.workspace }}
-            #run: robot -d reports -i sanity robot_tests
-        
+            ROBOT_REPORTS_DIR: ${{ github.workspace }}/reports
         - name: Upload test results
-          uses: actions/upload-artifact@v1  
+          uses: actions/upload-artifact@v1
           if: always()
           with:
             name: reports
-            path: ${{ github.workspace }}
+            path: ${{ github.workspace }}/reports
