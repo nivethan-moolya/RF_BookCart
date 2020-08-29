@@ -14,7 +14,7 @@ jobs:
           env:
             BROWSER: chrome
             ROBOT_TESTS_DIR: /home/runner/work/RF_BookCart/RF_BookCart/robot_tests
-            #ROBOT_REPORTS_DIR: ${{ github.workspace }}/reports
+            ROBOT_REPORTS_DIR: /home/runner/work/RF_BookCart/RF_BookCart/reports
         - name: Upload test results
           uses: actions/upload-artifact@v1
           if: always()
