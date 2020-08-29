@@ -23,30 +23,4 @@ jobs:
           if: always()
           with:
             name: reports
-            path: ${{ github.workspace }}
-    
-    generate_report:
-        if: always()
-        needs: [test] 
-        runs-on: ubuntu-latest
-        steps:
-        - name: Download reports
-          uses: actions/download-artifact@v1
-          with:
-            name: reports
-        - name: Get Repository Owner & Name
-          run: |
-            export OWNER="$(echo "${{ github.repository }}" | awk -F / '{print $1}' | sed -e "s/:refs//")"
-            export REPO="$(echo "${{ github.repository }}" | awk -F / '{print $2}' | sed -e "s/:refs//")"
-            echo "::set-env name=REPOSITORY_OWNER::$OWNER"
-            echo "::set-env name=REPOSITORY_NAME::$REPO"
-        
-        - name: Send report to commit
-          uses: joonvena/robotframework-reporter-action@v0.1
-          env:
-            GH_ACCESS_TOKEN: 822b9c9ae0a4265a078ef1a6b854015d1ed106f6
-            REPO_OWNER: ${{ env.REPOSITORY_OWNER }}
-            COMMIT_SHA: ${{ github.sha }}
-            REPOSITORY: ${{ env.REPOSITORY_NAME }}
-            REPORT_PATH: ${{ github.workspace }}/reports
-            #REPORT_PATH: reports
+            path: ${{ github.workspace }}/reports
