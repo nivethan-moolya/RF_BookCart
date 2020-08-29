@@ -23,7 +23,7 @@ jobs:
           if: always()
           with:
             name: reports
-            #path: ${{ github.workspace }}
+            path: ${{ github.workspace }}
     
     generate_report:
         if: always()
@@ -40,6 +40,10 @@ jobs:
             export REPO="$(echo "${{ github.repository }}" | awk -F / '{print $2}' | sed -e "s/:refs//")"
             echo "::set-env name=REPOSITORY_OWNER::$OWNER"
             echo "::set-env name=REPOSITORY_NAME::$REPO"
+        actions:
+        - action: "Sleep well"
+          type: "SLEEP"
+          sleep_in_sec: 600
         - name: Send report to commit
           uses: joonvena/robotframework-reporter-action@v0.1
           env:
