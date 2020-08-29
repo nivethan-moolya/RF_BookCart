@@ -14,10 +14,10 @@ jobs:
           env:
             BROWSER: chrome
             ROBOT_TESTS_DIR: /home/runner/work/RF_BookCart/RF_BookCart/robot_tests
-            ROBOT_REPORTS_DIR: /home/runner/work/RF_BookCart/RF_BookCart/reports
+            ROBOT_REPORTS_DIR: /home/runner/work/RF_BookCart/RF_BookCart
         - name: Upload test results
           uses: actions/upload-artifact@v1
           if: always()
           with:
             name: reports
-            path: /home/runner/work/RF_BookCart/RF_BookCart/robot_tests/reports
+            path: /home/runner/work/RF_BookCart/RF_BookCart/robot_tests
