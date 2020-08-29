@@ -6,7 +6,7 @@ Resource  ../Operational/locatorVariables.robot
 Suite Setup  Launch Browser
 Suite Teardown  Close web Browser
 
-#robot -d Results -i sanity TestsBook
+#robot -d reports -i sanity robot_tests
 #robot -d Results -v BROWSER:$BROWSER -i sanity TestsBook
 
 
