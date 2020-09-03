@@ -2,4 +2,4 @@
 which chromedriver
 #chromedriver = /usr/local/bin/chromedriver
 which chromedriver
-robot -d reports -i sanity robot_tests
+robot -d reports -i e2e_milestone Tests

@@ -52,7 +52,7 @@ ${study_tasks} =  Study ${TM_Study}
 #Configurable Milestone Creation
 ${CDS_Name} =  Team22CDS1r
 ${Study_Name} =  Dermatophytosis_Study
-${Template_Name_prefix} =  R07_Template
+${Template_Name_prefix} =  R07_Template_gitCI
 ${Template_Name}
 ${alias_Name_prefix} =  alias
 ${alias_name}

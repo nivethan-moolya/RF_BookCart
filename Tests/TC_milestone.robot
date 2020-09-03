@@ -12,7 +12,7 @@ Test Teardown  LogOut Medidata
 #robot -d Results -i e2e  Tests
 *** Test Cases ***
 User should be able to Create Configurable milestone template and Assign to Study
-    [Tags]    e2e
+    [Tags]    e2e_milestone
     Given User is assigned with CDS Settings
     When User allowed to Create Milestone Template
     And User allowed to Create Configurable milestones

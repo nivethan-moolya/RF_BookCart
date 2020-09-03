@@ -3,24 +3,31 @@
 User is assigned with CDS Settings
     Click on the CDS name under Study management application left menu  ${CDS_Name}
     Click on Settings from left menu and Go to Milestones Templates section
+    Log to Console  Yeyyy!! Assigned with CDS Settings
 
 User allowed to Create Milestone Template
     Create Template by Clicking on Add Template
+    Log to Console  Yesss!! Create Milestone Template
 
 User allowed to Create Configurable milestones
     Click on Add milestone and Provide unique "Alias" and "Reporting Name"
+    Log to Console  Fantass!! Create Configurable milestones
 
 User tries to Assign Created Milestone Template to a Study
     Click on Assign to Study Link, Assign to an available Study and Save
+    Log to Console  Amazzz!! Assign Created Milestone Template to a Study
 
 User is assigned with Study Settings
     Go to Listing Page and Search for the assigned Study  ${Study_Name}
+    Log to Console  Awesomee!! Assigned with Study Settings
 
 Verify the Created Template is assigned to Study Successfully
     Go to Study Settings and Milestones Template
+    Log to Console  Haha!! Created Template is assigned to Study Successfully
 
 Verify the Create Configurable milestone displaying at the Study Milestone page
     Go to Milestones Page and Observe the Configurable Milestone
+    Log to Console  Done!! Create Configurable milestone displaying at the Study Milestone page
 
 #Life Cycle E2E Operations
 
